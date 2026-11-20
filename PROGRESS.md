@@ -1,0 +1,30 @@
+# Moniker progress
+
+- [ ] **Phase 1 Setup**
+  - [x] 1.1 repo and skeleton
+  - [x] 1.2 run it
+- [ ] **Phase 2 Spot screenshots**
+  - [ ] 2.1 watch folder
+  - [ ] 2.2 filter screenshots
+  - [ ] 2.3 wait for file to finish writing
+- [ ] **Phase 3 Name from context (no AI model)**
+  - [ ] 3.1 read text with Apple Vision
+  - [ ] 3.2 pick best text
+  - [ ] 3.3 frontmost app context
+  - [ ] 3.4 image label fallback
+  - [ ] 3.5 build filename
+- [ ] **Phase 4 Rename safely**
+  - [ ] 4.1 rename file
+  - [ ] 4.2 duplicates and bad characters
+  - [ ] 4.3 handle failures
+- [ ] **Phase 5 Menu bar UI**
+  - [ ] 5.1 on/off toggle
+  - [ ] 5.2 settings and real screenshot folder
+  - [ ] 5.3 start at login
+- [ ] **Phase 6 Improve**
+  - [ ] 6.1 test on real screenshots
+  - [ ] 6.2 speed check
+- [ ] **Phase 7 Ship**
+  - [ ] 7.1 package, sign, notarize
+  - [ ] 7.2 DMG, landing page, GitHub Release
+  - [ ] 7.3 README, demo video, resume bullets
