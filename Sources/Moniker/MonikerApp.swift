@@ -20,6 +20,12 @@ struct MonikerApp: App {
         watcher = DesktopWatcher(folder: folder) { url in
             guard isScreenshot(url) else { return }
             print("Screenshot: \(url.lastPathComponent)")
+            // Wait in the background so the main thread isn't blocked
+            Task {
+                // Continue only once the file is fully saved
+                guard await waitUntilReady(url) else { return }
+                print("Ready: \(url.lastPathComponent)")
+            }
         }
         watcher.start()
     }
