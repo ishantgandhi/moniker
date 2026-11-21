@@ -6,13 +6,18 @@ struct MonikerApp: App {
     // Kept as a property so the watcher stays alive for the app's lifetime
     private let watcher: DesktopWatcher
 
+    // Default: watch ~/Desktop (SwiftUI requires a no-argument init)
     init() {
+        self.init(folder: FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0])
+    }
+
+    // The folder to watch is passed in
+    init(folder: URL) {
         // No Dock icon: menu bar only.
         NSApplication.shared.setActivationPolicy(.accessory)
 
-        // Watch the Desktop; react only to screenshots
-        let desktop = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0]
-        watcher = DesktopWatcher(folder: desktop) { url in
+        // React only to screenshots
+        watcher = DesktopWatcher(folder: folder) { url in
             guard isScreenshot(url) else { return }
             print("Screenshot: \(url.lastPathComponent)")
         }
